@@ -4,33 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDÓMINA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Un poco de estilo para que el logo se vea ordenado */
-        header {
-            padding: 20px;
-            display: flex;
-            justify-content: center; /* Centra el logo */
-            align-items: center;
-            background-color: #ffffff; /* Fondo blanco */
-        }
-        .logo-indomina {
-            max-width: 200px; /* Ajusta este número para cambiar el tamaño */
-            height: auto;
-        }
+        /* Definimos una fuente elegante para el logo */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+        .font-logo { font-family: 'Playfair Display', serif; }
     </style>
 </head>
-<body>
+<body class="bg-[#F5F2EB]">
 
-    <header>
-        <a href="index.html">
-            <img src="1766537747912.jpg" alt="Logo INDÓMINA" class="logo-indomina">
-        </a>
-    </header>
+<nav class="fixed w-full z-50 bg-[#F5F2EB]/90 border-b border-[#B59B7D]/20 h-20 flex items-center px-6">
+    <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+        
+        <div class="flex items-center gap-3">
+            <img src="1766537747912.jpg" alt="Logo Indómina" class="h-12 w-12 object-cover rounded-full"> 
+            <div class="flex flex-col">
+                <span class="font-logo text-2xl leading-none">INDÓMINA</span>
+                <span class="text-[8px] uppercase tracking-[0.4em] text-[#B59B7D] font-bold">Esencia Natural</span>
+            </div>
+        </div>
 
-    <main style="text-align: center; padding: 50px;">
-        <h1>Bienvenidos a INDÓMINA</h1>
-        <p>Tu emprendimiento está en marcha.</p>
-    </main>
+        <div class="hidden md:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-bold">
+            <a href="#coleccion" class="hover:text-[#B59B7D] transition-colors">Tienda</a>
+            <a href="#filosofia" class="hover:text-[#B59B7D] transition-colors">Nosotros</a>
+        </div>
+    </div>
+</nav>
+
+<div class="h-20"></div>
+
+<main class="py-20 text-center">
+    <h1 class="font-logo text-5xl mb-4">Bienvenidos</h1>
+    <p class="text-[#B59B7D] tracking-widest uppercase text-sm">Ropa de Mujer</p>
+</main>
+
+<footer id="filosofia" class="bg-[#2D4038] text-[#F5F2EB] py-24 text-center px-6">
+    <img src="1766537747912.jpg" alt="Logo Indómina" class="h-20 w-20 mx-auto mb-8 rounded-full object-cover opacity-90"> 
+    <h3 class="font-serif text-3xl md:text-5xl italic mb-12 max-w-4xl mx-auto">"Viste tu libertad. Camina con la fuerza de quien se sabe dueña de su propio destino."</h3>
+    <p class="font-logo text-4xl opacity-80">INDÓMINA</p>
+</footer>
 
 </body>
 </html>
