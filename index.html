@@ -16,16 +16,13 @@
         
         .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; z-index: 100; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
         .whatsapp-btn:hover { transform: scale(1.1); }
-        
-        /* Ajuste para que el logo en el hero se vea como una pieza de arte */
-        .hero-mask { border-radius: 150px 150px 0 0; border: 8px solid white; }
 
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
             background: transparent;
             padding: 8px 0;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .marquee-content {
             display: inline-block;
@@ -69,13 +66,13 @@
                 </a>
             </div>
             
-            <div class="flex flex-col">
-                <div class="bg-white hero-mask shadow-xl flex items-center justify-center p-8 md:p-16">
-                    <img src="1766537747912.jpg" class="w-full h-auto object-contain">
+            <div class="flex flex-col items-center">
+                <div class="w-full max-w-[450px] flex items-center justify-center">
+                    <img src="1766537747912.jpg" class="w-full h-auto object-contain mix-blend-multiply">
                 </div>
                 
-                <div class="marquee-container">
-                    <div class="marquee-content">
+                <div class="marquee-container w-full">
+                    <div class="marquee-content text-center">
                         boutique online • vistiendo a mujeres que saben lo que quieren • boutique online • vistiendo a mujeres que saben lo que quieren • 
                     </div>
                 </div>
@@ -85,7 +82,7 @@
 
     <section id="coleccion" class="py-24 px-6 max-w-7xl mx-auto border-t border-[#B59B7D]/10">
         <h2 class="font-serif text-5xl italic text-center mb-16">La Selección</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div class="text-center group">
                 <div class="relative overflow-hidden rounded-2xl mb-4 shadow-md">
                     <img src="1766683963283.jpg" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">
