@@ -19,23 +19,23 @@
         
         .hero-mask { border-radius: 150px 150px 0 0; border: 8px solid white; object-fit: cover; }
 
-        /* Animación de Texto Infinito */
+        /* Marquee Ajustado: Más pequeño y elegante */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
-            background: #EBE6D8; /* Un crema un poco más oscuro para resaltar */
-            padding: 12px 0;
-            border-top: 1px solid rgba(181, 155, 125, 0.3);
-            border-bottom: 1px solid rgba(181, 155, 125, 0.3);
+            background: transparent;
+            padding: 8px 0;
+            margin-top: 10px;
         }
         .marquee-content {
             display: inline-block;
-            animation: scroll-text 40s linear infinite;
-            font-size: 13px;
-            letter-spacing: 0.3em;
+            animation: scroll-text 30s linear infinite;
+            font-size: 10px; /* Tamaño reducido */
+            letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: bold;
             color: var(--dorado);
+            opacity: 0.8;
         }
         @keyframes scroll-text {
             from { transform: translateX(0); }
@@ -62,24 +62,24 @@
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col pt-20">
-        
-        <div class="marquee-container mt-4">
-            <div class="marquee-content">
-                boutique online • vistiendo a mujeres que saben lo que quieren • boutique online • vistiendo a mujeres que saben lo que quieren • boutique online • vistiendo a mujeres que saben lo que quieren • boutique online • vistiendo a mujeres que saben lo que quieren • 
+    <section class="min-h-screen flex items-center pt-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="font-logo text-6xl md:text-8xl leading-none mb-8 text-[#2D4038]">
+                    <span class="font-serif italic text-[#B59B7D]">Indómina</span>
+                </h1>
+                <p class="text-lg opacity-80 mb-10">Viste tu libertad con prendas diseñadas para acompañar tu fuerza natural</p>
+                <a href="https://wa.me/5491155275864" class="bg-[#2D4038] text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#B59B7D] transition-colors">Comprar ahora</a>
             </div>
-        </div>
-
-        <div class="flex-grow flex items-center px-6 max-w-7xl mx-auto w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="font-logo text-6xl md:text-8xl leading-none mb-8">
-                        <span class="font-serif italic text-[#B59B7D]">Indómina</span>
-                    </h1>
-                    <p class="text-lg opacity-80 mb-10">Viste tu libertad con prendas diseñadas para acompañar tu fuerza natural</p>
-                    <a href="https://wa.me/5491155275864" class="bg-[#2D4038] text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest text-xs">Comprar ahora</a>
-                </div>
+            
+            <div class="flex flex-col">
                 <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000" class="hero-mask w-full h-[500px] shadow-xl">
+                
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        boutique online • vistiendo a mujeres que saben lo que quieren • boutique online • vistiendo a mujeres que saben lo que quieren • boutique online • vistiendo a mujeres que saben lo que quieren • 
+                    </div>
+                </div>
             </div>
         </div>
     </section>
