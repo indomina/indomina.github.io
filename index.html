@@ -19,7 +19,7 @@
         
         .hero-mask { border-radius: 150px 150px 0 0; border: 8px solid white; object-fit: cover; }
 
-        /* Marquee Ajustado: Más pequeño y elegante */
+        /* Marquee Ajustado debajo de la imagen */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -30,7 +30,7 @@
         .marquee-content {
             display: inline-block;
             animation: scroll-text 30s linear infinite;
-            font-size: 10px; /* Tamaño reducido */
+            font-size: 10px;
             letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: bold;
@@ -56,20 +56,18 @@
                 <span class="text-[8px] uppercase tracking-[0.4em] text-[#B59B7D] font-bold">Esencia Natural</span>
             </div>
             <div class="hidden md:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-bold">
-                <a href="#coleccion">Tienda</a>
-                <a href="#filosofia">Nosotros</a>
+                <a href="#coleccion" class="hover:text-[#B59B7D] transition-colors">Tienda</a>
+                <a href="#filosofia" class="hover:text-[#B59B7D] transition-colors">Nosotros</a>
             </div>
         </div>
     </nav>
 
     <section class="min-h-screen flex items-center pt-24 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h1 class="font-logo text-6xl md:text-8xl leading-none mb-8 text-[#2D4038]">
-                    <span class="font-serif italic text-[#B59B7D]">Indómina</span>
-                </h1>
-                <p class="text-lg opacity-80 mb-10">Viste tu libertad con prendas diseñadas para acompañar tu fuerza natural</p>
-                <a href="https://wa.me/5491155275864" class="bg-[#2D4038] text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#B59B7D] transition-colors">Comprar ahora</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+            <div class="flex flex-col items-start">
+                <a href="https://wa.me/5491155275864" class="bg-[#2D4038] text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#B59B7D] transition-colors shadow-lg">
+                    Explorar Colección
+                </a>
             </div>
             
             <div class="flex flex-col">
@@ -84,11 +82,11 @@
         </div>
     </section>
 
-    <section id="coleccion" class="py-24 px-6 max-w-7xl mx-auto">
+    <section id="coleccion" class="py-24 px-6 max-w-7xl mx-auto border-t border-[#B59B7D]/10">
         <h2 class="font-serif text-5xl italic text-center mb-16">La Selección</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div class="text-center group">
-                <div class="relative overflow-hidden rounded-2xl mb-4">
+                <div class="relative overflow-hidden rounded-2xl mb-4 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">
                     <span class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-widest font-bold">Disponible</span>
                 </div>
@@ -97,29 +95,5 @@
             </div>
             
             <div class="text-center group md:mt-12">
-                <div class="relative overflow-hidden rounded-2xl mb-4">
-                    <img src="https://images.unsplash.com/photo-1539109132382-361bd570520a?q=80&w=1000" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">
-                    <span class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-widest font-bold">Último</span>
-                </div>
-                <h3 class="font-serif text-2xl italic">Blusa Lino</h3>
-                <p class="text-[#B59B7D] font-bold mt-2">$18.500</p>
-            </div>
-
-            <div class="text-center group">
-                <div class="relative overflow-hidden rounded-2xl mb-4">
-                    <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?q=80&w=1000" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">
-                    <span class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-widest font-bold">Disponible</span>
-                </div>
-                <h3 class="font-serif text-2xl italic">Conjunto Terra</h3>
-                <p class="text-[#B59B7D] font-bold mt-2">$32.000</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="filosofia" class="bg-[#2D4038] text-[#F5F2EB] py-24 text-center px-6">
-        <h3 class="font-serif text-3xl md:text-5xl italic mb-12">"Viste tu libertad. Camina con la fuerza de quien se sabe dueña de su propio destino."</h3>
-        <p class="font-logo text-4xl opacity-80">INDÓMINA</p>
-    </footer>
-
-</body>
-</html>
+                <div class="relative overflow-hidden rounded-2xl mb-4 shadow-sm">
+                    <img
