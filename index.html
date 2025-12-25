@@ -3,104 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDÓMINA | Catálogo Online</title>
+    <title>INDÓMINA | Esencia Natural</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --verde: #2D4038; --crema: #F5F2EB; --dorado: #B59B7D; }
-        body { font-family: 'Tenor Sans', sans-serif; background-color: var(--crema); color: var(--verde); overflow-x: hidden; scroll-behavior: smooth; }
+        body { font-family: 'Tenor Sans', sans-serif; background-color: var(--crema); color: var(--verde); scroll-behavior: smooth; }
         .font-logo { font-family: 'Cinzel Decorative', cursive; }
         .font-serif { font-family: 'Cormorant Garamond', serif; }
         
-        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; z-index: 100; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
-        .whatsapp-btn:hover { transform: scale(1.1); }
-
-        .marquee-container { overflow: hidden; white-space: nowrap; background: transparent; padding: 8px 0; margin-top: 20px; }
-        .marquee-content { display: inline-block; animation: scroll-text 35s linear infinite; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: bold; color: var(--dorado); opacity: 0.8; }
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; z-index: 100; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        
+        .marquee-container { overflow: hidden; white-space: nowrap; padding: 10px 0; }
+        .marquee-content { display: inline-block; animation: scroll-text 30s linear infinite; font-[10px] uppercase tracking-[0.3em] color: var(--dorado); }
         @keyframes scroll-text { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .mix-blend-multiply { mix-blend-mode: multiply; }
 
+        /* Control de secciones */
         .hidden-section { display: none; }
-        .fade-in { animation: fadeIn 0.8s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-[#F5F2EB]/95 border-b border-[#B59B7D]/20 h-20 flex items-center px-6">
-        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-[#F5F2EB]/90 backdrop-blur-sm border-b border-[#B59B7D]/20 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex flex-col cursor-pointer" onclick="window.location.reload()">
-                <span class="font-logo text-2xl leading-none">INDÓMINA</span>
+                <span class="font-logo text-2xl leading-none uppercase">INDÓMINA</span>
                 <span class="text-[8px] uppercase tracking-[0.4em] text-[#B59B7D] font-bold">Esencia Natural</span>
             </div>
-
             <div class="flex items-center space-x-6 text-[11px] uppercase tracking-[0.2em] font-bold">
-                <button onclick="mostrarCatalogo()" class="hover:text-[#B59B7D] transition-colors hidden md:block uppercase">Catálogo</button>
-                <a href="https://instagram.com/indomina.boutique" target="_blank" class="hover:text-[#B59B7D]">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.999 0h.001zm-.008 1.441c2.144 0 2.395.008 3.243.047.785.036 1.21.166 1.494.276.377.146.646.321.93.605.283.284.458.552.604.93.11.284.24.709.276 1.494.039.848.047 1.099.047 3.243s-.008 2.395-.047 3.243c-.036.785-.166 1.21-.276 1.494a2.71 2.71 0 0 1-.605.93c-.284.283-.552.458-.93.604-.284.11-.709.24-1.494.276-.848.039-1.099.047-3.243.047s-2.395-.008-3.243-.047c-.785-.036-1.21-.166-1.494-.276a2.711 2.711 0 0 1-.93-.605 2.71 2.71 0 0 1-.604-.93c-.11-.284-.24-.709-.276-1.494-.039-.848-.047-1.099-.047-3.243s.008-2.395.047-3.243c.036-.785.166-1.21.276-1.494.146-.377.321-.646.605-.93.284-.283.552-.458.93-.604.284-.11.709-.24 1.494-.276.848-.039 1.099-.047 3.243-.047zM8 3.891a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 6.776a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334zM11.736 3.266a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92z"/></svg>
-                </a>
+                <button onclick="verCatalogo()" class="hover:text-[#B59B7D] transition-colors">Catálogo</button>
+                <a href="https://instagram.com/indomina.boutique" target="_blank">Instagram</a>
             </div>
         </div>
     </nav>
 
-    <main id="home-view" class="fade-in">
-        <section class="min-h-screen flex items-center pt-24 px-6 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
-                <div class="flex flex-col items-start">
-                    <button onclick="mostrarCatalogo()" class="bg-[#2D4038] text-white px-12 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#B59B7D] transition-colors shadow-lg">
+    <div id="home-content">
+        <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+            <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="font-serif text-6xl md:text-8xl italic mb-8 leading-tight">Viste tu <br> libertad.</h1>
+                    <button onclick="verCatalogo()" class="bg-[#2D4038] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-[#B59B7D] transition-all">
                         Ver Colección
                     </button>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-full max-w-[450px] flex items-center justify-center">
-                        <img src="1766537747912.jpg" class="w-full h-auto object-contain mix-blend-multiply">
-                    </div>
-                    <div class="marquee-container w-full">
-                        <div class="marquee-content">boutique online • vistiendo a mujeres que saben lo que quieren • </div>
+                <div class="relative">
+                    <img src="1766537747912.jpg" class="w-full h-auto mix-blend-multiply">
+                    <div class="marquee-container mt-4">
+                        <div class="marquee-content">boutique online • piezas exclusivas • indómina esencia • </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 px-6 max-w-7xl mx-auto border-t border-[#B59B7D]/10">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-5xl italic mb-4">Boutique Online</h2>
-                <p class="text-[10px] uppercase tracking-[0.3em] opacity-60">Piezas elegidas para potenciar tu esencia</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div class="text-center group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4 shadow-md bg-white">
-                        <img src="1766683963283.jpg" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-[9px] font-bold tracking-widest uppercase">Stock: Disponible</div>
-                    </div>
+                    <img src="1766683963283.jpg" class="w-full aspect-[3/4] object-cover rounded-2xl mb-6 shadow-sm">
                     <h3 class="font-serif text-2xl italic">Encaje Negro</h3>
-                    <p class="text-[#B59B7D] font-bold mt-1">Consultar Precio</p>
-                    <a href="https://wa.me/5491155275864" class="mt-4 inline-block text-[10px] uppercase tracking-widest border-b border-[#2D4038] pb-1">WhatsApp</a>
+                    <p class="text-[#B59B7D] font-bold">Consultar Precio</p>
                 </div>
                 <div class="text-center group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4 shadow-md bg-white">
-                        <img src="1766683719151.jpg" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-[9px] font-bold tracking-widest uppercase">Stock: Disponible</div>
-                    </div>
+                    <img src="1766683719151.jpg" class="w-full aspect-[3/4] object-cover rounded-2xl mb-6 shadow-sm">
                     <h3 class="font-serif text-2xl italic">Corset</h3>
-                    <p class="text-[#B59B7D] font-bold mt-1">Consultar Precio</p>
-                    <a href="https://wa.me/5491155275864" class="mt-4 inline-block text-[10px] uppercase tracking-widest border-b border-[#2D4038] pb-1">WhatsApp</a>
+                    <p class="text-[#B59B7D] font-bold">Consultar Precio</p>
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
-    <main id="catalogo-view" class="hidden-section fade-in pt-32 pb-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="font-serif text-6xl italic mb-4">Colección</h2>
-            <button onclick="window.location.reload()" class="text-[10px] uppercase tracking-widest border-b border-[#2D4038] pb-1">← Volver al Inicio</button>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+    <div id="catalogo-full" class="hidden-section pt-32 pb-24 px-6 max-w-7xl mx-auto">
+        <h2 class="font-serif text-5xl italic text-center mb-16">Nuestra Colección</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <script>
-                const prendasCatalogo = [
+                const fotos = [
                     "1766683872781.jpg", "1766686468055.jpg", "1766682141739.jpg", 
                     "1766683179603.jpg", "1766683443114.jpg", "1766682914265.jpg", 
                     "1766699853781.jpg", "1766681659293.jpg", "1766685511530.jpg", 
@@ -108,42 +85,31 @@
                     "1766681166848.jpg", "1766681073675.jpg", "1766681327797.jpg", 
                     "1766683606086.jpg"
                 ];
-                prendasCatalogo.forEach(img => {
+                fotos.forEach(f => {
                     document.write(`
-                    <div class="text-center group">
-                        <div class="relative overflow-hidden rounded-2xl mb-4 shadow-md bg-white">
-                            <img src="${img}" class="w-full aspect-[3/4] object-cover">
-                            <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-[9px] font-bold tracking-widest uppercase">Stock: Disponible</div>
+                        <div class="text-center">
+                            <img src="${f}" class="w-full aspect-[3/4] object-cover rounded-xl mb-4">
+                            <h3 class="font-serif text-xl italic">Indómina Style</h3>
+                            <a href="https://wa.me/5491155275864" class="text-[9px] uppercase tracking-widest border-b border-[#2D4038] pb-1">Consultar</a>
                         </div>
-                        <h3 class="font-serif text-2xl italic text-[#2D4038]">Nombre de Prenda</h3>
-                        <p class="text-[#B59B7D] font-bold mt-1">Consultar Precio</p>
-                        <a href="https://wa.me/5491155275864" class="mt-4 inline-block text-[10px] uppercase tracking-widest border-b border-[#2D4038] pb-1">WhatsApp</a>
-                    </div>`);
+                    `);
                 });
             </script>
         </div>
-    </main>
+        <div class="text-center mt-20">
+            <button onclick="window.location.reload()" class="text-[10px] uppercase tracking-widest border-b border-[#2D4038]">Volver al Inicio</button>
+        </div>
+    </div>
 
-    <footer class="bg-[#2D4038] text-[#F5F2EB] py-24 text-center px-6">
-        <h3 class="font-serif text-3xl md:text-5xl italic mb-12">"Viste tu libertad con prendas diseñadas para acompañar tu fuerza natural."</h3>
-        
-        <div class="flex flex-col items-center gap-8">
-            <p class="font-logo text-4xl opacity-80">INDÓMINA</p>
-            
-            <div class="flex gap-8">
-                <a href="https://instagram.com/indomina.boutique" target="_blank" class="flex flex-col items-center gap-2 group">
-                    <svg width="24" height="24" fill="currentColor" class="group-hover:text-[#B59B7D] transition-colors" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.999 0h.001zm-.008 1.441c2.144 0 2.395.008 3.243.047.785.036 1.21.166 1.494.276.377.146.646.321.93.605.283.284.458.552.604.93.11.284.24.709.276 1.494.039.848.047 1.099.047 3.243s-.008 2.395-.047 3.243c-.036.785-.166 1.21-.276 1.494a2.71 2.71 0 0 1-.605.93c-.284.283-.552.458-.93.604-.284.11-.709.24-1.494.276-.848.039-1.099.047-3.243.047s-2.395-.008-3.243-.047c-.785-.036-1.21-.166-1.494-.276a2.711 2.711 0 0 1-.93-.605 2.71 2.71 0 0 1-.604-.93c-.11-.284-.24-.709-.276-1.494-.039-.848-.047-1.099-.047-3.243s.008-2.395.047-3.243c.036-.785.166-1.21.276-1.494.146-.377.321-.646.605-.93.284-.283.552-.458.93-.604.284-.11.709-.24 1.494-.276.848-.039 1.099-.047 3.243-.047zM8 3.891a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 6.776a2.667 2.667 0 1 1 0-5.334 2.667 2.667 0 0 1 0 5.334zM11.736 3.266a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92z"/>
-                    </svg>
-                    <span class="text-[8px] tracking-widest uppercase">Instagram</span>
-                </a>
-                <a href="https://facebook.com/TU_USUARIO_FACEBOOK" target="_blank" class="flex flex-col items-center gap-2 group">
-                    <svg width="24" height="24" fill="currentColor" class="group-hover:text-[#B59B7D] transition-colors" viewBox="0 0 16 16">
-                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                    </svg>
-                    <span class="text-[8px] tracking-widest uppercase">Facebook</span>
-                </a>
+    <footer class="bg-[#2D4038] text-[#F5F2EB] py-20 px-6 text-center mt-20">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-serif text-4xl italic mb-12">"Viste tu libertad con prendas diseñadas para acompañar tu fuerza natural."</h2>
+            <div class="font-logo text-3xl mb-8">INDÓMINA</div>
+            <div class="flex justify-center space-x-8">
+                <a href="https://instagram.com/indomina.boutique" target="_blank" class="uppercase text-[10px] tracking-widest hover:text-[#B59B7D]">Instagram</a>
+                <a href="https://facebook.com/TU_PAGINA" target="_blank" class="uppercase text-[10px] tracking-widest hover:text-[#B59B7D]">Facebook</a>
             </div>
+            <p class="mt-12 text-[8px] uppercase tracking-[0.5em] opacity-40">© 2025 Indómina Boutique</p>
         </div>
     </footer>
 
@@ -152,13 +118,11 @@
     </a>
 
     <script>
-        function mostrarCatalogo() {
-            document.getElementById('home-view').classList.add('hidden-section');
-            document.getElementById('catalogo-view').classList.remove('hidden-section');
+        function verCatalogo() {
+            document.getElementById('home-content').classList.add('hidden-section');
+            document.getElementById('catalogo-full').classList.remove('hidden-section');
             window.scrollTo(0,0);
         }
     </script>
-
 </body>
-                        </html>
-                            
+</html>
